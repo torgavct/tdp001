@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <title>Christian's Blog</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1> Christian's Blog</h1>
+    </header>
+    <nav>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav_btn>
+	  <div  class = btn_text>Uppgift 1</div>
+		</a>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav_btn>
+	  <div  class = btn_text>Uppgift 2</div>
+		</a>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav_btn>
+	  <div  class = btn_text>Uppgift 3</div>
+		</a>
+		<div class = nav_btn>
+	  <h2>Uppgift 4</h2>
+		</div>
+	 </nav>
+    <main>
+      <div class = main_box>
+	<div class = title>
+	  <a href = "https://gitlab.liu.se/chrto494/tdp001-blog" target = "_blank" id = Upg1 >Uppgift 2 - 13/09-24</a>
+	</div>
+	<div class = text_box>
+	  <p> > LÄste igenom mailet och bekantade mig med kommandon </p>
+	   <p> > Grep on\b kommer att leta i varje rad efter en "on" utifrån text filen angiven "resultat.txt" .</p>
+	  <div class = code_box>
+	    <p>chrto494@CT-Comp:~$ grep "on\b" resultat.txt </p>
+	    <p> Mikaela Anderss<span class = comp>on</span>       14   0  17<br>
+	      Gustaf Karlss<span class = comp>on</span>           12  14  13<br>
+	      Marcus Carlss<span class = comp>on</span>          12   9  12<br>
+	      Josefine Carls<span class = comp>on</span>         18  14  16<br>
+	      Göran Johanss<span class = comp>on</span>        16  19  15<br>
+	      Yngve Johans<span class = comp>on</span>          10  11   8<br>
+	      Lennart Anderss<span class = comp>on</span>       9  10  13
+	    </p>
+	  </div>
+	  <p> > För nÄsta uppgift så använda jag av samma grep son som den första men la till -v. </p>
+	  <p> > -v kommer att visa raderna som inte innehåller son. </p>
+	  <p> > dessutom använder av $ som kommer att göra så att vi kolar på slutet av raden </p> 
+	  <div class = code_box>
+	    <p> grep -v "son$" resultat.txt </p>
+	  </div>
+	  <p> > Sedan så pipar vi vidare det vi får till en cut anrop så att vi får fram bara efternamn. </p>
+	  <p> > -d står för tecknet vi ska skÄra på, -f Är columnen som Är innan eller efter tecknet. </p>
+	  <p> > Vi pipar vidare för att bara skriva ut det 5 raderna och deta sker med head och sedan antalet av rader(n).</p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~$ grep -v "son$" resultat.txt | cut -d' ' -f2 | head -n5</p>
+	    <p> Fors<br>
+	      HÄgglund<br>
+	      Holmqvist<br>
+	      Rundgren<br>
+	      Rönnberg
+	  </div>
+	  <p> > NÄsta del så anvÄnder vi först samma teknik för att få ut rader som innehåller an.</p>
+	  <p> > Så nÄr vi har an så kan vi pipa det så kör vi en wc (word count) -l. </p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~$ grep an resultat.txt | wc -l </p>
+	    <p> 4 </p>
+	  </div>
+	  <p> > Sist med Latex pdf:en så var det enkelt att Ändra saker på den. </p>
+	  <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/TDP003-mall.pdf"<h3>TDP003.pdf</h3></a>
+    </main>
+    <footer>
+      <h3> @2024 senaste uppdaterad. 17/09</h3>
+    </footer>
+  </body> 
+
+</html>

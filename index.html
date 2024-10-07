@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <title>Christian's Blog</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1> Christian's Blog</h1>
+    </header>
+    <nav>
+      <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav_btn>
+	<div  class = btn_text>Uppgift 1</div>
+      </a>
+      <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav_btn>
+	<div  class = btn_text>Uppgift 2</div>
+      </a>
+      <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav_btn>
+	<div  class = btn_text>Uppgift 3</div>
+      </a>
+      <div class = nav_btn>
+	<h2>Uppgift 4</h2>
+      </div>
+   </nav>
+    <main>
+      <div class = main_box>
+	<div class = title>
+	  <a href = "https://gitlab.liu.se/chrto494/tdp001-blog" target = "_blank" id = Upg1 >Uppgift 1 - 05/09-24</a>
+	</div>
+	<div class = text_box>
+	  
+	  <p> > Började med att komma fram till katalogen dÄr min websida befinner sig i.</p>
+	  <div class = code_box>
+	    <p> cd /TDP001/Blog/</p>
+	  </div>
+	  
+	  <p> > Inuti i min blog katalog så använda jag kommandot init för att koppla upp till Gitlab.<br>
+	    > Därefter fick jag tillbaks ett meddelande om att jag har initializerad en empty git.</p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~/TDP001/Blog$ git init</p>
+	  </div>
+	  
+	  <p> > Sedan utförde jag en git status för att se om filerna har funnits.<br>
+	    > Och fick tillbaks att filerna finns men de har inte addad in i git.
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~/TDP001/Blog$ git status</p>
+	    <p class = comp> modified:   index.html <br> modified:   style.css</p>
+	  </div>
+
+	  <p> > Nu så behövde jag git add filerna in i git och sedan checka git status om filerna har kommit in i git (* = alla filer)</p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~/TDP001/Blog$ git add * <br>
+	      chrto494@CT-Comp:~/TDP001/Blog$ git status
+	    </p>
+	    <p id = green>
+	      modified:   index.html<br>
+	      modified:   style.cs
+	    </p>
+	  </div>
+
+	  <p> > Nu med filerna inne i git så kan jag git commit för att skicka det till gitlab.</p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~/TDP001/Blog$ git commit -am "första commit" <br>
+	      master bc61657] ändringar <br>
+              2 files changed, 2 insertions(+), 0 deletions(-)
+	  </div>
+	  
+	  <p> > Men för att skicka över det behövs det använda git push.<br>
+	    > Dessutom så behövs min gitlab username och lösenord<br>
+	    > Och med detta så har det överfört till gitlab
+	  </p>
+	  <div class = code_box>
+	    <p> chrto494@CT-Comp:~/TDP001/Blog$ git push <br>
+	      Username for 'https://gitlab.liu.se': <br>
+	      Password for 'https://chrto494@gitlab.liu.se':</p>
+	  </div>
+
+	  <p> > Så nu inne i gitlab så kommer en tab upp med en merge projectet knapp sedan komer den fram längst ner i sdian igen! </p>
+	  
+	  <img src="images/merge-pic.png" alt = "Merge request">
+
+	  <p> > Tillslut det sista steget är att trycka på merge knappen som kommer då klistar in fillerna i gitlab nu permanent </p>
+	  <img src = "images/merge-btn.png" alt = "Merge button">
+	</div>
+	
+      </div>
+      
+    </main>
+    <footer>
+      <h3> @2024 senaste uppdaterad. 13/09</h3>
+    </footer>
+  </body> 
+
+</html>
