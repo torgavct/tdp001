@@ -10,26 +10,144 @@
       <h1> Christian's Blog</h1>
     </header>
     <nav>
-        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav_btn>
-          <div  class = btn_text>Uppgift 1</div>
+        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav-btn>
+          <div  class = btn-text>Uppgift 1</div>
         </a>
-        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav_btn>
-          <div  class = btn_text>Uppgift 2</div>
+        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav-btn>
+          <div  class = btn-text>Uppgift 2</div>
         </a>
-        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav_btn>
-          <div  class = btn_text>Uppgift 3</div>
+        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav-btn>
+          <div  class = btn-text>Uppgift 3</div>
         </a>
-        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg4.html" class = nav_btn>
-          <div  class = btn_text>Uppgift 4</div>
+        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg4.html" class = nav-btn>
+          <div  class = btn-text>Uppgift 4</div>
         </a>
-        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/terminal.html" class = nav_btn>
-          <div  class = btn_text>Terminal</div>
+        <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/terminal.html" class = nav-btn>
+          <div  class = btn-text>Terminal</div>
         </a>
     </nav>
     <main>
+      <div class = main-box>
+        <div class = title>
+          <a href = "https://github.com/torgavct/tdp001" target = "-blank" id = Upg1 >Terminal - 17/10-24</a>
+        </div>
+        <div class="text-box">
+          Kataloger och filer
+          <p>> Först så tar jag mig till katalogen jag vill skapa detta project.</p>
+          <p>> Detta utförs genom att först skirva 'ls' som list alla kataloger i den nuvarande directory.</p> 
+          <p>> sen cd [katalognamnet]' som byter directory till katalogen jag skriver in.</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span>$ ls </p>
+          <p id="blue">Class  Desktop  Documents  Downloads  Pictures  Public  snap  Videos</p>
+          <p><span class="chrto"><span class="chrto">chrto494@comp:~</span></span> cd Class/</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class$ </p>
+        </div>
+
+        <div class="text-box">
+          <p>> Nu ska jag skapa nya kataloger med mkdir -p</p>
+          <p>> mkdir står för 'make directory' och -p som Är 'path'</p>
+          <p>> Sedan skapa en read me fil med touch, och det Är ett sÄtt att skapa filer.</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span>/Class$ mkdir -p /TDP004/lab1</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class$ ls</p>
+          <p id="blue">tdp001  tdp002  tdp003  TDP004</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class$ cd TDP004/</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$ ls</p>
+          <p id="blue">lab1</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$ touch README.md</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$ ls</p>
+          <p id="blue">lab1 README.md</p>
+        </div>
+
+        <div class="text-box">
+          Jobba via ssh
+          <p>> Nu ska vi koppla katalogen med en git repository, nedanför visas hur det görs:</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004/lab1$ git init --initial-branch = main</p>
+          <p>Initialized empty Git repository in /home/chrto494/Class/TDP004/main/.git/ </p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004/lab1$ git remote add origin git@gitlab.liu.se:chrto494/tdp004.git </p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004/lab1$ git add .</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$ git commit -am "commit"</p>
+          <p> [main (root-commit) 1193480] commit<br>1 file changed, 0 insertions(+), 0 deletions(-)<br>create mode 100644 README.md</p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$ git push --set-upstream origin main</p>
+          <p>Enumerating objects: 5, done. <br>Counting objects: 100% (5/5), done. <br>Delta compression using up to 12 threads <br>Compressing objects: 100% (3/3), done. <br>Writing objects: 100% (5/5), 432 bytes | 432.00 KiB/s, done. <br>Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 <br>To gitlab.liu.se:chrto494/tdp004.git <br>* [new branch]      main -> main <br>branch 'main' set up to track 'origin/main'. <br>
+             </p>
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$</p>
+        </div>
+
+        <div class="text-box">
+          <p>> Nu ska jag lÄgga upp katalogen med git repository in till ssh</p>
+          <p>> Det görs genom att anvÄnda git clone som kommer att clona projeket som ligger i git och lÄgga den i våran ssh</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span>$ ssh chrto494@ssh.edu.liu.se</p>
+          <p>(chrto494@ssh.edu.liu.se) Password: </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>$ cd /wwwpub/chrto494 </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494$ git clone git@gitlab.liu.se:chrto494/tdp004.git</p>
+          <p>Cloning into 'tdp004'...
+            remote: Enumerating objects: 5, done. <br>
+            remote: Counting objects: 100% (5/5), done.<br>
+            remote: Compressing objects: 100% (3/3), done.<br>
+            remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)<br>
+            Receiving objects: 100% (5/5), done.<br>
+            <span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494$ ls</p>
+          <p id = "blue">TDP001  tdp004</p>
+        </div>
+
+        <div class="text-box">
+          <p>> Nu skapar jag kataloger och filer som utförs inom ssh</p>
+        </div>
+        <div class="code-box">
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494$ mkdir -p tdp004/lab2/documentation</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494$ cd tdp004/lab1</p> 
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004/lab1$ touch lab1.cc</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004/lab1$ touch lab2.cc lab2.h</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004/lab1$ ls</p>
+          <p id = blue> lab1.cc  lab2.cc  lab2.h</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004/lab1$ cd ..</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ mv lab1/lab2.* lab2/ </p>
+        </div>
+
+        <div class="text-box">
+          <p>> Nu ska jag redigera README filen med emacs och skriver vad som helst dÄr inne.</p>
+          <p>> sen så ska man skapa git ignore och lÄgga filer i ignore</p>
+          <p>> Sedan för att lÄgga till regler om vad man ska ignorera så öppnar man .gitignore med emacs.</p>
+          <p>> Och då skriver det man vill inte ha och spara filen.</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ emacs README.md </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ touch junk.temp </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ touch .gitignore </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ emacs .gitignore </p>
+          <p>*~</p>
+          <p>*.temp</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ git add . </p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ git commit -am "ssh job"</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ git push</p>
+          <p><span class="chrto">chrto494@tlvm-4-1-2:~</span>/wwwpub/chrto494/tdp004$ exit</p>
+
+        </div>
+
+        <div class="text-box">
+          Lösa en konflikt
+          <p>> Nu ska jag öppna readme.md filen och skapa nån Ändring i det</p>
+          <p>> Efter detta så git pullar och detta kommer skap en konflikt för att vi har 2 olika versioner av samma dokument.</p>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span>/Class/TDP004$  </p>
+        </div>
     </main>
     <footer>
-      <h3> @2024 senaste uppdaterad. 08/10</h3>
+      <h3> @2024 senaste uppdaterad. 17/10</h3>
     </footer>
   </body> 
 

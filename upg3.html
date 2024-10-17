@@ -10,34 +10,34 @@
       <h1> Christian's Blog</h1>
     </header>
     <nav>
-		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav_btn>
-		  <div  class = btn_text>Uppgift 1</div>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/index.html" class = nav-btn>
+		  <div  class = btn-text>Uppgift 1</div>
 		</a>
-		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav_btn>
-		  <div  class = btn_text>Uppgift 2</div>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg2.html" class = nav-btn>
+		  <div  class = btn-text>Uppgift 2</div>
 		</a>
-		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav_btn>
-		  <div  class = btn_text>Uppgift 3</div>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg3.html" class = nav-btn>
+		  <div  class = btn-text>Uppgift 3</div>
 		</a>
-	   <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg4.html" class = nav_btn>
-		  <div  class = btn_text>Uppgift 4</div>
+	   <a href = "https://php-web.edu.liu.se/~chrto494/TDP001/upg4.html" class = nav-btn>
+		  <div  class = btn-text>Uppgift 4</div>
 	  	</a>
-		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/terminal.html" class = nav_btn>
-			<div  class = btn_text>Terminal</div>
+		<a href = "https://php-web.edu.liu.se/~chrto494/TDP001/terminal.html" class = nav-btn>
+			<div  class = btn-text>Terminal</div>
 		</a>
  	</nav>
     <main>
-      <div class = main_box>
+      <div class = main-box>
 	<div class = title>
-	  <a href = "https://github.com/torgavct/tdp001" target = "_blank" id = Upg1 >Uppgift 3 - 16/09-24</a>
+	  <a href = "https://github.com/torgavct/tdp001" target = "-blank" id = Upg1 >Uppgift 3 - 16/09-24</a>
 	</div>
 	
-	<div class = text_box>
+	<div class = text-box>
 	  <p> > hittar fram förnamn genom att hita ett mönster av 3 bokstÄver i rad.</p>
 	  <p> > Sedan i samma mönster hitta fram 2 bokstÄver som ska representera efternamn. </p>
 	  <p> > Och sist hitta de 2 eller 3 beroende på student eller lärare på deras liu id. </p>
 
-	<div class = code_box>
+	<div class = code-box>
 	  <p> ( [ a - z ]{ 2 , 3 } ) ( [ a - z ] { 2 } ) ( \ d { 2 , 3 } ) </p>
 	</div>
 
@@ -46,7 +46,7 @@
 	  <p> > sedan tar fram 2 nummer efter som Är mellan 0-9.</p>
 	  <p> > Sist så sker samma sak igen med at ta fram 2 number efter som Är mellan 0-9. </p>
 
-	<div class = code_box>
+	<div class = code-box>
 	  <p> [ 0 - 9 ] { 4 } - [ 0 - 9 ] { 2 } - [ 0 - 9 ] { 2 }
 	</div>
 	
@@ -55,10 +55,10 @@
 	  <p> > För varje nummer så ger det en krav om vad ör nummer det kan vara då om det inte matchar så kommer den inte bli plockad upp. </p>
 	  <p> > Dessutom anvÄnder mönstret av sig av or | för at ge olika krav beroende på det först numret. </p>
 
-	<div class = code_box>
+	<div class = code-box>
 	  <p> ( \ d { 4 } ) -  ( [ 0 ] [ 0 - 9 ] | [ 1 ] [ 0 -  2 ] ) - ( [ 0 - 2 ] [ 0 - 9 ]  | [ 3 ] [ 0 - 1 ] )
 	</div>
-	<div class = code_box>
+	<div class = code-box>
 	  <p> Körexempel :</p>
 	  <p> &emsp;&emsp;&emsp;ÅR | MÅN | DAG </p>
 	  <p> 2005-12-12  &emsp;&emsp;&emsp;<span id = green>2005-12-12  </span></p>
@@ -72,7 +72,7 @@
 	  <p> > DÄr inne så anvÄnder den av sig regex för att leta efter mönster som börjar med < och slutar med >.</p>
 	  <p> > Detta kommer att ta fram alla taggar och när hittade lÄgga till dem i en lista som sedan printas ut. </p>
 	
-	<div class = code_box>
+	<div class = code-box>
 	  <p> import re</p><br>
 	  <p> with open ("index.html") as file:</p>
 	  <p> &emsp;list = [  ]</p>
