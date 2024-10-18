@@ -1,0 +1,67 @@
+<div class="text-box">
+    <p>> Navigera till TDP004 katalogen och skapa en ny fil test.py</p>
+    <p>> Öppna test.py i Emacs och skriv ett Pythonprogram som skriver ut "Hello, World!"</p>
+    <p>> Spara och stäng filen i Emacs.</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004$ cd /path/to/TDP004</p>
+    <p><span class="user">@comp:~</span>/Class/TDP004$ touch test.py</p>
+    <p><span class="user">@comp:~</span>/Class/TDP004$ emacs test.py</p>
+    <p>#!/usr/bin/env python3<br>print("Hello, World!")</p>
+  </div>
+  
+  <div class="text-box">
+    <p>> Sedan gör man filen kör bar.</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004$ chmod +x test.py</p>
+    <p><span class="user">@comp:~</span>/Class/TDP004$ ./test.py</p>
+    <p>Hello, World!</p>
+  </div>
+  
+  <div class="text-box">
+    Lägga till en kommentar med echo
+    <p>> Lägg till en kommentar överst i filen med hjälp av kommandot echo.</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004$ echo "# Detta är en kommentar som skapats med echo" | cat - test.py > temp && mv temp test.py</p>
+    <p><span class="user">@comp:~</span>/Class/TDP004$ emacs test.py</p>
+    <p># Innehåll i test.py:</p>
+    <pre>
+  # Detta är en kommentar som skapats med echo
+  #!/usr/bin/env python3
+  print("Hello, World!")
+    </pre>
+  </div>
+  
+  <div class="text-box">
+    Kopiera katalogen lab2 till lab3
+    <p>> Kopiera hela katalogen lab2 så du får en ny katalog lab3.</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004$ cp -r lab2 lab3</p>
+  </div>
+  
+  <div class="text-box">
+    Byta namn på filer i lab3
+    <p>> Byt namn på alla filer i lab3 så de innehåller "lab3" istället för "lab2".</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004/lab3$ for file in *lab2*; do mv "$file" "${file/lab2/lab3}"; done</p>
+  </div>
+  
+  <div class="text-box">
+    Kopiera lab1 till lab4 och byt namn
+    <p>> Kopiera lab1 från studentdomänen och modifiera filnamnen till lab4.</p>
+  </div>
+  
+  <div class="code-box">
+    <p><span class="user">@comp:~</span>/Class/TDP004$ cp -r /path/to/student/lab1 lab4</p>
+    <p><span class="user">@comp:~</span>/Class/TDP004/lab4$ for file in *lab1*; do mv "$file" "${file/lab1/lab4}"; done</p>
+  </div>
+  
