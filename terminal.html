@@ -158,6 +158,7 @@
           RÄttigheter och skriva till fil
           <p>> skapa en ny fil test.py</p>
           <p>> Öppna test.py i Emacs och skriv ett Pythonprogram som skriver ut " Hello, World ! "</p>
+          <p>Dessutom i filen lÄngst upp så ska man skriva #!/usr/bin/env python3 detta gör det möjligt för filen att bli körbar.</p>
           <p>> Spara och stÄng filen i Emacs.</p>
         </div>
         
@@ -190,9 +191,9 @@
         </div>
         
         <div class="text-box">
-          <p>> Nu ska det skapas en ny katalog som ska vara en kopia av lab2 med samma filer men namnen ska vara ändrade.</p>
+          <p>> Nu ska det skapas en ny katalog som ska vara en kopia av lab2 med samma filer men namnen ska vara Ändrade.</p>
           <p>> så med cp "copy" så kan vi kopiera lab2 till lab3 som skapas automatiskt med kommandot, -r gör så att allt innehåll kopieras också.</p>
-          <p>> sen för att ändra namnen på filer används mv move som flyttar filer till en annat ställe men kan dessutom ändra namnet på filen.</p>
+          <p>> sen för att Ändra namnen på filer anvÄnds mv move som flyttar filer till en annat stÄlle men kan dessutom Ändra namnet på filen.</p>
         </div>
 
         <div class="code-box">
@@ -203,7 +204,7 @@
         </div>
 
         <div class="text-box">
-          <p>> Nu för att kopiera över lab1 katalogen så kommer det användas scp, s som är secure och cp som innan copy</p>
+          <p>> Nu för att kopiera över lab1 katalogen så kommer det anvÄndas scp, s som Är secure och cp som innan copy</p>
           <p>> och med allt innehåll också -r, detta kommer att spara in en ny katalog som kommer att skapas i samma kommaando lab4.</p>
         </div>
         <div class="code-box">
@@ -212,8 +213,8 @@
 
         <div class="text-box">
           Dokumentera katalogen
-          <p>> Så för att skapa ett träd struktur kan man använda tree kommandot, om man inte har den så visas det hur man laddar ner det.</p>
-          <p>> Sedan för att då spara det in till Readme så kan man använda > read för att skicka tree resultat in i readme.</p>
+          <p>> Så för att skapa ett trÄd struktur kan man anvÄnda tree kommandot, om man inte har den så visas det hur man laddar ner det.</p>
+          <p>> Sedan för att då spara det in till Readme så kan man anvÄnda > read för att skicka tree resultat in i readme.</p>
         </div>
         <div class="code-box">
           <p><span class="chrto">chrto494@comp:~</span><span class = "darkblue">/Class/TDP004$</span> tree</p>
@@ -234,7 +235,71 @@
             └── test.py</p>
           <p><span class="chrto">chrto494@comp:~</span><span class = "darkblue">/Class/TDP004$</span> tree TDP004 > Readme.md</p>
         </div>
+        <div class="text-box">
+          Smått och gott
+          <p>> Först för att hitta en körbar fil så nvÄnder man find, ~ som står för hemkatalogen och alla denns sbkataloger.</p>
+          <p>> Sedan -type f som Är du en fil typ. och sist -executable alltså körbar</p>
+        </div>
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span><span class = "darkblue">$</span> find . -type f -executable</p>
+        </div>
 
+        <div class="text-box">
+          <p>> NÄst så ska man ytterligen filtrera så att man ska kunna köra deom och att de Är pyhton filer.</p>
+          <p>> Detta har man redan utfört i uppgift 4 alltså anvÄnda grep som tar innehåll från filen och hittar om det finns "#! /usr/bin/env python3" då Är den körbar.</p>
+          <p>> Alltså borde våran kommando se ut så hÄr.</P>
+        </div>
+
+        <div class="code-box">
+          <p><span class="chrto">chrto494@comp:~</span><span class = "darkblue">$</span>  find -type f -executable -name "*.py" -exec grep -l "#! /usr/bin/env python3" {} \;  </p>
+        </div>
+        <div class="text-box">
+          <p>> Vi fortsätter mer find och vi ger den en max djup med 1 så att den går inte llängre ner i subkataloger men satnar i hemkatalogen</p>
+          <p>> och som förra letar vi efter en fil typ som är executable.</p>
+          <p>> Då för att hitta kommentarer så grepar vi filen och tar ut det med # alltså en kommentar.</p>
+
+        </div>
+        <div class="code-box">
+          <p> <span class="chrto">chrto494@comp:~</span><span class = "darkblue">$</span> find ~ -maxdepth 1 -type f -exec grep "^#" {} \; </p>
+        </div>
+
+        <div class="text-box">
+          Lite Bashprogrammering
+        </div>
+        <div class="code-box">
+          &emsp;#!/bin/bash<br>
+          &emsp;echo "Enter the first number: "<br>
+          &emsp;read start<br>
+          &emsp;echo "Enter the last number: "<br>
+          &emsp;read end<br>
+          &emsp;#Funktion för att se om talet är ett primtal<br>
+          &emsp;is_prime ( ) { <br>
+          &emsp;&emsp;local n=$1<br>
+          &emsp;&emsp;if ( ( n <= 1 ) ); then<br>
+          &emsp; &emsp;&emsp;return 1<br>
+          &emsp;&emsp;fi<br>
+          &emsp;&emsp;for ( ( i=2; i*i<=n; i++ ) ); do<br>
+          &emsp;&emsp;&emsp;if ( ( n % i == 0 ) ); then<br>
+          &emsp;&emsp;&emsp;&emsp;return 1<br>
+          &emsp;&emsp;&emsp;fi<br>
+          &emsp;&emsp;done<br>
+          &emsp;&emsp;return 0<br>
+          &emsp;} <br>
+          <br>
+          &emsp;prim = ( ) <br>
+          &emsp;for ( ( n=start; n<=end; n++ ) ); do<br>
+          &emsp;&emsp;if is_prime $n; then<br>
+          &emsp;&emsp;&emsp;prim+=( $n )<br>
+          &emsp;&emsp;fi<br>
+          &emsp;done<br>
+          <br>
+          &emsp;for ( ( x=0 ; x<$ { prim [ @ ] }; x+=2 ) ); do <br>
+          &emsp;&emsp;echo "$ { prim [ x ] } "<br>
+        </div>
+      </div>
+      
+        
+      
     </main>
     <footer>
       <h3> @2024 senaste uppdaterad. 17/10</h3>
